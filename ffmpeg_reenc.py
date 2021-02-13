@@ -3,7 +3,7 @@ import os
 
 parser=argparse.ArgumentParser()
 parser.add_argument('-f','--files', nargs='+',help="files to combine and reencode",type=str)
-parser.add_argument('-r',"--rencode",nargs="+",help="indicate whether to skip (s) or re-encode(r) for each file",type=str)
+parser.add_argument('-r',"--reencode",nargs="+",help="indicate whether to skip (s) or re-encode(r) for each file",type=str)
 parser.add_argument('-o','--output',type=str,help="output file name")
 args=parser.parse_args()
 print(args.files)
