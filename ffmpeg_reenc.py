@@ -7,15 +7,20 @@ parser.add_argument('-r',"--reencode",nargs="+",help="indicate whether to skip (
 parser.add_argument('-o','--output',type=str,help="output file name")
 args=parser.parse_args()
 print(args.files)
-renc_flag=args.rencode[0].split(",")
+renc_flag=args.reencode[0].split(",")
 output=args.output
 #create ffmpeg command
 c1="ffmpeg "
 s=" -i "
 ofiles=""
-files=args.files[0].split(",")
+print(args.files)
+try:
+    files=args.files[0].split(",")
+except:
+    files=args.files
 for i in files:
-    ofiles=ofiles+" -i "+i
+    print(i)
+    ofiles=ofiles+" -i '"+i+"'"
 file=c1+ofiles
 print(file)
 c2=' -filter_complex "'
