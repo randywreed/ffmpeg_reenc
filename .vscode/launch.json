@@ -11,9 +11,13 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args":[
-                "-f","file1.mp4,file2.mp4,file3.mp4",
-                "-r","r,r,r",
-                "-o","newvid.mp4"
+                "-f","/home/randy/Downloads/Rasa for Beginners/2. First development steps/training_data_pt1.mp4"\
+                "/home/randy/Downloads/Rasa for Beginners/2. First development steps/training_data_pt2.mkv"\
+                "/home/randy/Downloads/Rasa for Beginners/2. First development steps/training_data_pt3.mp4"\
+                "/home/randy/Downloads/Rasa for Beginners/2. First development steps/training_data_pt4.mkv"\
+                "/home/randy/Downloads/Rasa for Beginners/2. First development steps/training_data_pt5.mp4",
+                "-r","r,r,r,r,r",
+                "-o","training_data.mp4"
             ]
         }
     ]
