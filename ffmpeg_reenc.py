@@ -13,14 +13,14 @@ output=args.output
 c1="ffmpeg "
 s=" -i "
 ofiles=""
-print(args.files)
-try:
-    files=args.files[0].split(",")
-except:
-    files=args.files
+print(f'argfiles={args.files}')
+
+print(f'len={len(args.files)} type={type(args.files)} ')
+files=args.files
 for i in files:
-    print(i)
-    ofiles=ofiles+" -i '"+i.strip()+"'"
+    print(f'add {i} {len(i)}')
+    if len(i.strip(',').strip())>1:
+        ofiles=ofiles+" -i '"+i.strip(',').strip()+"'"
 file=c1+ofiles
 print(file)
 c2=' -filter_complex "'
