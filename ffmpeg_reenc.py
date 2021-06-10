@@ -20,7 +20,7 @@ except:
     files=args.files
 for i in files:
     print(i)
-    ofiles=ofiles+" -i '"+i+"'"
+    ofiles=ofiles+" -i '"+i.strip()+"'"
 file=c1+ofiles
 print(file)
 c2=' -filter_complex "'
