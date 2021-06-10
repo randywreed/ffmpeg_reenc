@@ -2,7 +2,7 @@ import argparse
 import os
 
 parser=argparse.ArgumentParser()
-parser.add_argument('-f','--files', nargs='+',help="files to combine and reencode",type=str)
+parser.add_argument('-f','--files', nargs='+',help="files to combine and reencode")
 parser.add_argument('-r',"--reencode",nargs="+",help="indicate whether to skip (s) or re-encode(r) for each file",type=str)
 parser.add_argument('-o','--output',type=str,help="output file name")
 args=parser.parse_args()
@@ -14,9 +14,15 @@ c1="ffmpeg "
 s=" -i "
 ofiles=""
 print(f'argfiles={args.files}')
-
-print(f'len={len(args.files)} type={type(args.files)} ')
-files=args.files
+if len(args.files)==1:
+    #check if only one file
+    try:
+        files=args.files[0].split(',')
+    except:
+        files=args.files
+else:
+    print(f'len={len(args.files)} type={type(args.files)} ')
+    files=args.files
 for i in files:
     print(f'add {i} {len(i)}')
     if len(i.strip(',').strip())>1:
